@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 
+import CheckoutButton from '../../src';
+
 const App = () => {
-  return (<div>app</div>);
+  return (<CheckoutButton />);
 };
 
 ReactDOM.render(

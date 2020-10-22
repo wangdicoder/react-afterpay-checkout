@@ -9,12 +9,25 @@ module.exports = {
 		path: path.resolve(__dirname, '../build'),
 		publicPath: '/',
 	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js'],
+	},
 	module: {
 		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: 'babel-loader',
+			},
+			{
+				test: /\.tsx?$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'ts-loader',
+					options: {
+						configFile: path.resolve(__dirname, 'tsconfig.json'),
+					},
+				},
 			},
 			{
 				test: /\.scss$/,

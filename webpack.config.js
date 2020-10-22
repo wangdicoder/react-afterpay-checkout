@@ -1,7 +1,14 @@
 const path = require('path');
 
 module.exports = {
+	mode: 'production',
 	entry: './src/index.ts',
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].min.js',
+		publicPath: './dist/',
+		libraryTarget: 'commonjs2',
+	},
 	module: {
 		rules: [
 			{
@@ -14,8 +21,7 @@ module.exports = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 	},
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist'),
+	externals: {
+		react: 'react',
 	},
 };
