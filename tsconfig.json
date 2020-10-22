@@ -12,6 +12,9 @@
     "lib": [
       "dom",
       "es2017"
+    ],
+    "types": [
+      "index.d.ts"
     ]
   },
   "include": [
