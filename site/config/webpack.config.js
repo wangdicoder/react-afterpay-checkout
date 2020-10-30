@@ -34,6 +34,19 @@ module.exports = {
 				exclude: /node_modules/,
 				use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
 			},
+			{
+				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 10240,
+							name: path.join('img/[name].[hash:7].[ext]'),
+							esModule: false,
+						},
+					},
+				],
+			},
 		],
 	},
 	plugins: [
