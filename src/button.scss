@@ -1,2 +1,16 @@
 .afterpay-checkout-btn {
+  outline: none;
+  background-color: #000;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-container {
+
+  }
 }

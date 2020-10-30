@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 declare global {
   interface Window {
@@ -11,6 +11,8 @@ export type ButtonProps = {
   countryCode: string;
   behavior?: 'popup' | 'redirect';
   onComplete?: (event: any) => void;
+  logo?: 'image' | 'text' | 'all';
   className?: string;
   style?: React.CSSProperties;
+  children?: React.ReactNode;
 };
