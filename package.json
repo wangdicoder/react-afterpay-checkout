@@ -1,12 +1,14 @@
 {
   "name": "react-afterpay-checkout",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.min.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config site/config/webpack.config.js",
     "build": "NODE_ENV=production webpack --config webpack.config.js --progress --color",
-    "test": "jest"
+    "test": "jest",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,8 @@
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
+    "docz": "^2.3.1",
+    "gatsby-plugin-sass": "^2.3.22",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^26.6.0",
     "node-sass": "^4.14.1",
