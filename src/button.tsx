@@ -40,7 +40,12 @@ export const Button = (props: ButtonProps) => {
   return (
     <button className="afterpay-checkout-btn" onClick={onBtnClick}>
       <div className="afterpay-checkout-btn__wrapper">
-        <div>{children}</div>
+        <div
+          className={`afterpay-checkout-btn__children${
+            children ? ' afterpay-checkout-btn__children_margin' : ''
+          }`}>
+          {children}
+        </div>
         {renderLogo()}
       </div>
     </button>

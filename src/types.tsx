@@ -12,6 +12,7 @@ export type ButtonProps = {
   behavior?: 'popup' | 'redirect';
   onComplete?: (event: any) => void;
   logo?: 'image' | 'text' | 'all';
+  theme?: 'black-white';
   className?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
