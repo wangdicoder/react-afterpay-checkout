@@ -19,18 +19,21 @@ export const Button = (props: ButtonProps) => {
     }
   };
 
+  const labelLogoSrc = () =>
+    countryCode === 'GB'
+      ? require('./assets/cp-logo-text.svg')
+      : require('./assets/ap-logo-text.svg');
+
   const renderLogo = () => {
     switch (logo) {
       case 'image':
         return <img src={require('./assets/ap-logo.svg')} alt="afterpay" height={lineHeight} />;
       case 'text':
-        return (
-          <img src={require('./assets/ap-logo-text.svg')} alt="afterpay" height={lineHeight} />
-        );
+        return <img src={labelLogoSrc()} alt="afterpay" height={lineHeight} />;
       case 'all':
         return (
           <>
-            <img src={require('./assets/ap-logo-text.svg')} alt="afterpay" height={lineHeight} />
+            <img src={labelLogoSrc()} alt="afterpay" height={lineHeight} />
             <img src={require('./assets/ap-logo.svg')} alt="afterpay" height={lineHeight} />
           </>
         );
