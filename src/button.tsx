@@ -41,7 +41,7 @@ export const Button = (props: ButtonProps) => {
   };
 
   return (
-    <button className="afterpay-checkout-btn" onClick={onBtnClick}>
+    <button className="afterpay-checkout-btn" onClick={onBtnClick} type="button">
       <div className="afterpay-checkout-btn__wrapper">
         <div
           className={`afterpay-checkout-btn__children${
