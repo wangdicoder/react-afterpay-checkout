@@ -4,11 +4,11 @@
   "description": "",
   "main": "dist/index.min.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --config site/config/webpack.config.js",
+    "dev": "NODE_ENV=development webpack-dev-server --config dev/config/webpack.config.js",
     "build": "NODE_ENV=production webpack --config webpack.config.js --progress --color",
     "test": "jest",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "site:dev": "docz dev",
+    "site:build": "docz build"
   },
   "keywords": [],
   "author": "",
