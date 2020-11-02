@@ -1,14 +1,16 @@
 ---
-name: Examples
-route: /examples
+name: Usage
+route: /usage
 ---
 
-import { Playground, Props } from 'docz';
+import { Playground } from 'docz';
 import { Button } from '../src/button';
 
-# Example
+# Usage
 
-## Basic usage
+## Examples
+
+### Basic usage
 
 A very simple example.
 
@@ -16,7 +18,7 @@ A very simple example.
 	<Button token="123" countryCode="AU" />
 </Playground>
 
-## Logo
+### Logo
 
 Display text logo, image logo or both.
 
@@ -26,7 +28,7 @@ Display text logo, image logo or both.
 	<Button token="123" countryCode="AU" logo="text">Buy now with</Button>
 </Playground>
 
-## Theme
+### Theme
 
 Different button styles. `white-black` is the default style.
 
@@ -36,7 +38,7 @@ Different button styles. `white-black` is the default style.
 	<Button token="123" countryCode="AU" theme="black-mint">Shop now with</Button>
 </Playground>
 
-## Clearpay
+### Clearpay
 
 When the `countryCode='GB'`, the logo will be Clearpay.
 
@@ -47,4 +49,14 @@ When the `countryCode='GB'`, the logo will be Clearpay.
 
 ## API
 
-<Props of={Button} />
+| Property    | Description                                                 | Type                                | Default |
+| ----------- | ----------------------------------------------------------- | ----------------------------------- | ------- |
+| token       | (required) checkout token to be used to complete payment.   | string                              | -       |
+| countryCode | (required) country code.                                    | string                              | -       |
+| behavior    | method of launching the checkout page.                      | enum: `popup` &#124; `redirect`     | `popup` |
+| onComplete  | callback when transaction is complete. **popup mode only**. | (event: any) => void                | -       |
+| logo        | determine how to display the logo.                          | enum: `image` &#124; `text` &#124; `all`  | `all`  |
+| theme       | color of button's background and label.                     | enum: `white-black` &#124; `black-mint` &#124; `mint-black` | `white-black` |
+| className   | classname of button wrapper.                                | string                              | -       |
+| style       | extra styles.                                               | React.CSSProperties                 | -       |
+
