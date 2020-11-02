@@ -7,12 +7,14 @@ const lineHeight = 20;
 
 export const Button = (props: ButtonProps) => {
   const {
-    token,
-    countryCode,
-    onComplete,
     behavior = 'popup',
     logo = 'all',
     theme = 'white-black',
+    token,
+    countryCode,
+    onComplete,
+    style,
+    className,
     children,
   } = props;
 
@@ -74,7 +76,11 @@ export const Button = (props: ButtonProps) => {
   }, []);
 
   return (
-    <button className="afterpay-checkout-btn" onClick={onBtnClick} type="button">
+    <button
+      className={`afterpay-checkout-btn${className ? ` ${className}` : ''}`}
+      onClick={onBtnClick}
+      type="button"
+      style={style}>
       <div className="afterpay-checkout-btn__wrapper" style={getWrapperStyle()}>
         <div
           className={`afterpay-checkout-btn__children${
