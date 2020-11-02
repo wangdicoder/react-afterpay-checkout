@@ -1,11 +1,20 @@
 import React from 'react';
 import './button.scss';
 import { ButtonProps } from './types';
+import { Logo } from './logo';
 
 const lineHeight = 20;
 
 export const Button = (props: ButtonProps) => {
-  const { token, countryCode, onComplete, behavior = 'popup', logo = 'all', children } = props;
+  const {
+    token,
+    countryCode,
+    onComplete,
+    behavior = 'popup',
+    logo = 'all',
+    theme = 'white-black',
+    children,
+  } = props;
 
   const onBtnClick = () => {
     const { AfterPay } = window;
@@ -19,22 +28,37 @@ export const Button = (props: ButtonProps) => {
     }
   };
 
-  const labelLogoSrc = () =>
-    countryCode === 'GB'
-      ? require('./assets/cp-logo-text.svg')
-      : require('./assets/ap-logo-text.svg');
+  const LabelLogo = () =>
+    countryCode === 'GB' ? (
+      <Logo.CPTextLogo height={lineHeight} />
+    ) : (
+      <Logo.APTextLogo height={lineHeight} />
+    );
+
+  const getWrapperStyle = (): React.CSSProperties => {
+    switch (theme) {
+      case 'black-mint':
+        return { color: '#000', background: '#B2FCE3' };
+
+      case 'mint-black':
+        return { color: '#B2FCE3', background: '#000' };
+
+      default:
+        return { color: '#fff', background: '#000' };
+    }
+  };
 
   const renderLogo = () => {
     switch (logo) {
       case 'image':
-        return <img src={require('./assets/ap-logo.svg')} alt="afterpay" height={lineHeight} />;
+        return <Logo.APLogo height={lineHeight} />;
       case 'text':
-        return <img src={labelLogoSrc()} alt="afterpay" height={lineHeight} />;
+        return <LabelLogo />;
       case 'all':
         return (
           <>
-            <img src={labelLogoSrc()} alt="afterpay" height={lineHeight} />
-            <img src={require('./assets/ap-logo.svg')} alt="afterpay" height={lineHeight} />
+            <LabelLogo />
+            <Logo.APLogo height={lineHeight} />
           </>
         );
     }
@@ -42,7 +66,7 @@ export const Button = (props: ButtonProps) => {
 
   return (
     <button className="afterpay-checkout-btn" onClick={onBtnClick} type="button">
-      <div className="afterpay-checkout-btn__wrapper">
+      <div className="afterpay-checkout-btn__wrapper" style={getWrapperStyle()}>
         <div
           className={`afterpay-checkout-btn__children${
             children ? ' afterpay-checkout-btn__children_margin' : ''

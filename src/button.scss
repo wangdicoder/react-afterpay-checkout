@@ -1,9 +1,8 @@
 .afterpay-checkout-btn {
   outline: none;
-  background-color: #000;
   border: none;
-  padding: 10px 20px;
-  color: #fff;
+  padding: 0;
+  margin: 0;
   transition: all 300ms;
   cursor: pointer;
   &:active {
@@ -13,6 +12,7 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    padding: 10px 20px;
   }
 
   &__children {
