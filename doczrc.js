@@ -3,5 +3,5 @@ export default {
   files: 'docs/*.{md,markdown,mdx}',
   typescript: true,
   port: 8080,
-  menu: ['Get started', 'Examples'],
+  menu: ['Get started', 'Usage'],
 };
