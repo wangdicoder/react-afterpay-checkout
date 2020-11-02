@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './button.scss';
 import { ButtonProps } from './types';
 import { Logo } from './logo';
@@ -17,7 +17,8 @@ export const Button = (props: ButtonProps) => {
   } = props;
 
   const onBtnClick = () => {
-    const { AfterPay } = window;
+    // @ts-ignore
+    const AfterPay: any = window['AfterPay'];
     AfterPay.initialize({ countryCode });
     if (behavior === 'popup') {
       AfterPay.open();
@@ -63,6 +64,14 @@ export const Button = (props: ButtonProps) => {
         );
     }
   };
+
+  useEffect(() => {
+    if ('AfterPay' in window) return;
+
+    const element = document.createElement('script');
+    element.src = 'https://portal.afterpay.com/afterpay.js';
+    document.head.appendChild(element);
+  }, []);
 
   return (
     <button className="afterpay-checkout-btn" onClick={onBtnClick} type="button">

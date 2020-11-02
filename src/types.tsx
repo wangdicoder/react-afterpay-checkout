@@ -1,11 +1,5 @@
 import React from 'react';
 
-declare global {
-  interface Window {
-    AfterPay: any;
-  }
-}
-
 export type ButtonProps = {
   token: string;
   countryCode: string | 'AU' | 'NZ' | 'GB' | 'US' | 'CA';
