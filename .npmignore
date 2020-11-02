@@ -1,8 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+/.idea
 /.docz
 /dev
 /docs
 /node_modules
 gatsby-config.js
+doczrc.js
 .prettierignore
 .prettierrc
