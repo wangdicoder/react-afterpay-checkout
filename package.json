@@ -1,7 +1,7 @@
 {
   "name": "react-afterpay-checkout",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "A React button component wrapping Afterpay.js to provide a checkout utility.",
   "main": "dist/index.min.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config dev/config/webpack.config.js",
@@ -11,8 +11,8 @@
     "site:build": "docz build",
     "site:deploy": "npm run site:build && gh-pages -d .docz/dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Afterpay", "Checkout", "Afterpay.js", "Afterpay checkout"],
+  "author": "Di Wang<wangdicoder@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -44,9 +44,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "peerDependencies": {
-    "react": ">=16.9.0"
-  },
-  "dependencies": {
+    "react": ">=16.9.0",
     "@babel/runtime": "^7.12.1",
     "@babel/runtime-corejs3": "^7.12.1"
   },

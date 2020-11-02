@@ -1,8 +1,3 @@
----
-name: Get started
-route: /
----
-
 # React Afterpay Checkout
 
 [![npm](https://img.shields.io/npm/v/react-afterpay-checkout.svg?style=flat-square)](https://www.npmjs.com/package/react-afterpay-checkout)
