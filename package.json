@@ -1,6 +1,6 @@
 {
   "name": "react-afterpay-checkout",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "A React button component wrapping Afterpay.js to provide a checkout utility.",
   "main": "dist/index.min.js",
   "scripts": {
