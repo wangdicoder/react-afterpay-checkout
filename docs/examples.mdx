@@ -10,8 +10,38 @@ import { Button } from '../src/button';
 
 ## Basic usage
 
+A very simple example.
+
 <Playground>
 	<Button token="123" countryCode="AU" />
+</Playground>
+
+## Logo
+
+Display text logo, image logo or both.
+
+<Playground>
+	<Button token="123" countryCode="AU">Buy now with</Button><label> </label>
+	<Button token="123" countryCode="AU" logo="image">Buy now with</Button><label> </label>
+	<Button token="123" countryCode="AU" logo="text">Buy now with</Button>
+</Playground>
+
+## Theme
+
+Different button styles. `white-black` is the default style.
+
+<Playground>
+	<Button token="123" countryCode="AU" theme="white-black">Shop now with</Button><label> </label>
+	<Button token="123" countryCode="AU" theme="mint-black">Shop now with</Button><label> </label>
+	<Button token="123" countryCode="AU" theme="black-mint">Shop now with</Button>
+</Playground>
+
+## Clearpay
+
+When the `countryCode='GB'`, the logo will be Clearpay.
+
+<Playground>
+	<Button token="123" countryCode="GB">Shop with</Button>
 </Playground>
 
 
