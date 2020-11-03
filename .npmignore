@@ -4,6 +4,7 @@
 /dev
 /docs
 /node_modules
+/src/__tests__
 gatsby-config.js
 doczrc.js
 .prettierignore

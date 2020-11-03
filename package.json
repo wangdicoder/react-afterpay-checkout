@@ -11,14 +11,21 @@
     "site:build": "docz build",
     "site:deploy": "npm run site:build && gh-pages -d .docz/dist"
   },
-  "keywords": ["Afterpay", "Checkout", "Afterpay.js", "Afterpay checkout"],
+  "keywords": [
+    "Afterpay",
+    "Checkout",
+    "Afterpay.js",
+    "Afterpay checkout"
+  ],
   "author": "Di Wang<wangdicoder@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@types/jest": "^26.0.15",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "autoprefixer": "^10.0.1",
@@ -28,7 +35,8 @@
     "gatsby-plugin-sass": "^2.3.22",
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
-    "jest": "^26.6.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.2",
     "node-sass": "^4.14.1",
     "postcss-loader": "^4.0.4",
     "prettier": "2.1.2",
@@ -36,7 +44,9 @@
     "react-dom": "^17.0.0",
     "sass-loader": "^10.0.3",
     "style-loader": "^2.0.0",
+    "ts-jest": "^26.4.3",
     "ts-loader": "^8.0.6",
+    "ts-node": "^9.0.0",
     "typescript": "^4.0.3",
     "url-loader": "^4.1.1",
     "webpack": "^4.44.2",
@@ -44,9 +54,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "peerDependencies": {
-    "react": ">=16.9.0",
-    "@babel/runtime": "^7.12.1",
-    "@babel/runtime-corejs3": "^7.12.1"
+    "react": ">=16.9.0"
   },
   "browserslist": [
     "last 2 versions",
