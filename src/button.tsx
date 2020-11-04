@@ -5,7 +5,7 @@ import { Logo } from './logo';
 
 const lineHeight = 20;
 
-export const Button = (props: ButtonProps) => {
+export const Button = (props: ButtonProps): JSX.Element => {
   const {
     behavior = 'popup',
     logo = 'all',
@@ -18,9 +18,13 @@ export const Button = (props: ButtonProps) => {
     children,
   } = props;
 
-  const onBtnClick = () => {
+  const onBtnClick = (): void => {
     // @ts-ignore
     const AfterPay: any = window['AfterPay'];
+    if (!AfterPay) {
+      return console.error('AfterPay is undefined.');
+    }
+
     AfterPay.initialize({ countryCode });
     if (behavior === 'popup') {
       AfterPay.open();
@@ -31,7 +35,7 @@ export const Button = (props: ButtonProps) => {
     }
   };
 
-  const LabelLogo = () =>
+  const LabelLogo = (): React.ReactElement =>
     countryCode === 'GB' ? (
       <Logo.CPTextLogo height={lineHeight} />
     ) : (
@@ -51,7 +55,7 @@ export const Button = (props: ButtonProps) => {
     }
   };
 
-  const renderLogo = () => {
+  const renderLogo = (): React.ReactElement => {
     switch (logo) {
       case 'image':
         return <Logo.APLogo height={lineHeight} />;
@@ -71,7 +75,15 @@ export const Button = (props: ButtonProps) => {
     if ('AfterPay' in window) return;
 
     const element = document.createElement('script');
-    element.src = 'https://portal.afterpay.com/afterpay.js';
+    const baseUrl =
+      process.env.NODE_ENV === 'production'
+        ? countryCode === 'GB'
+          ? 'portal.clearpay.co.uk'
+          : 'portal.afterpay.com'
+        : countryCode === 'GB'
+        ? 'portal.sandbox.clearpay.co.uk'
+        : 'portal.sandbox.afterpay.com';
+    element.src = `https://${baseUrl}/afterpay.js`;
     document.head.appendChild(element);
   }, []);
 

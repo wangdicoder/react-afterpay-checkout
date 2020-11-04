@@ -1,15 +1,15 @@
 {
   "name": "react-afterpay-checkout",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A React button component wrapping Afterpay.js to provide a checkout utility.",
   "main": "dist/index.min.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config dev/config/webpack.config.js",
     "build": "NODE_ENV=production webpack --config webpack.config.js --progress --color",
     "test": "jest",
-    "site:dev": "docz dev",
+    "site:dev": "NODE_ENV=development docz dev",
     "site:build": "docz build",
-    "site:deploy": "npm run site:build && gh-pages -d .docz/dist"
+    "site:deploy": "NODE_ENV=production npm run site:build && gh-pages -d .docz/dist"
   },
   "keywords": [
     "Afterpay",
