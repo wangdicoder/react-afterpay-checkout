@@ -7,5 +7,11 @@
 /src/__tests__
 gatsby-config.js
 doczrc.js
+test-setup.js
+gulpfile.js
+jest.config.ts
+postcss.config.js
+tsconfig.json
+.babelrc
 .prettierignore
 .prettierrc
