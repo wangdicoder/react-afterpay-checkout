@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './button.scss';
 import { ButtonProps } from './types';
 import { Logo } from './logo';
 

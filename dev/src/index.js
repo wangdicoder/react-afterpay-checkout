@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import CheckoutButton from '../../src';
+import '../../src/button.scss';
 
 const App = () => {
   return (
